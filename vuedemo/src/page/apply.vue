@@ -21,7 +21,7 @@
             <div>{{name}}申请页面</div>
             <div>申请额度{{minQuota}}-{{maxQuota}}万</div>
             <div>当前时间{{date|formData}}</div>
-            string:<input type="number" v-model.string="num">
+            string:<input type="number" v-model.number="num">
             <br>
             number:<input type="number" v-model.number="num">
             <br>

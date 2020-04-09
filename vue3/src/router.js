@@ -9,17 +9,19 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/',
       name: 'admin',
       component: () => import('./layout/admin.vue'),
       children: [
         {
-          path: '/',
-          name: 'home',
+          path: '/home',
           component: () => import('./views/home.vue')
         },
         {
           path: '/about',
-          name: 'about',
           component: () => import('./views/about.vue')
         }
       ]

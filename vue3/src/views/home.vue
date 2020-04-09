@@ -19,16 +19,12 @@ export default {
     data: () => ({
         show: true
     }),
-    components: {},
-    methods: {
-        getCookie() {
-            axios.get("/node/cookie").then(res => {
-                console.log(res);
-            });
-        }
+    created() {
     },
     mounted() {
-        this.getCookie();
+        
+    },
+    methods: {
     }
 };
 </script>

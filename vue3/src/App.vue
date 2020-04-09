@@ -3,11 +3,23 @@
 </template>
 
 <script>
-import appAdmin from "./layout/admin";
+import api from "@/service/api";
+import apiapi from "@/service/api/api";
 export default {
     name: "App",
-    components: {
-        appAdmin
+    data() {
+        return {
+            over: false
+        };
+    },
+    created() {
+        this.getCookie();
+    },
+    methods: {
+        async getCookie() {
+            let res = await api.getCookie();
+            console.log(res);
+        }
     }
 };
 </script>

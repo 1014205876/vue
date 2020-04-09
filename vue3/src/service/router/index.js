@@ -1,26 +1,43 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const routerPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+    return routerPush.call(this, location).catch(error => error)
+}
+
 Vue.use(Router)
+
+import admin from '@/layout/admin.vue';
 
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
     routes: [
         {
-            path: '/',
-            name: 'admin',
-            component: () => import('@/layout/admin.vue'),
+            path: '',
+            redirect: 'home'
+        },
+        {
+            path: '',
+            component: admin,
             children: [
                 {
-                    path: '/',
-                    name: 'home',
-                    component: () => import('@/views/home.vue')
+                    path: 'home',
+                    component: () => import('@/views/home.vue'),
                 },
                 {
-                    path: '/about',
-                    name: 'about',
-                    component: () => import('@/views/about.vue')
+                    path: 'about',
+                    component: () => import('@/views/about.vue'),
+                },
+                {
+                    path: 'lianxi',
+                    children: [
+                        {
+                            path: 'calendar',
+                            component: () => import('@/views/lianxi/calendar.vue'),
+                        },
+                    ],
                 }
             ]
         },
@@ -33,5 +50,6 @@ export default new Router({
                 title: '拖拽页面'
             },
         },
+        { path: '*', redirect: '/404' }
     ]
 })

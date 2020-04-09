@@ -1,16 +1,17 @@
 <template>
-    <el-menu router="true">
+    <el-menu :router="true">
         <div v-for="(item,menuIndex) in nav" :key="menuIndex">
-            <el-menu-item v-if="item.type == 'link'" :index="item.url">
+            <el-menu-item v-if="item.type == 'link'" :index="''+menuIndex" :route="item.url">
                 <template slot="title">{{item.name}}</template>
             </el-menu-item>
-            <el-submenu v-if="item.type == 'sub'">
+            <el-submenu v-if="item.type == 'sub'" :index="''+menuIndex">
                 <template slot="title">{{item.name}}</template>
                 <el-menu-item-group>
                     <el-menu-item
                         v-for="(list,index) in item.children"
                         :key="index"
-                        :index="item.url"
+                        :index="''+menuIndex+'-'+index"
+                        :route="list.url"
                     >{{list.name}}</el-menu-item>
                 </el-menu-item-group>
             </el-submenu>
@@ -28,18 +29,16 @@ export default {
                 {
                     name: "首页",
                     type: "link",
-                    url: "/"
+                    url: "/home"
                 },
                 {
                     name: "登录",
                     type: "link",
-                    url: "/about",
+                    url: "/about"
                 },
                 {
                     name: "练习",
-                    state: "",
                     type: "sub",
-                    url: "",
                     children: [
                         {
                             name: "日历",

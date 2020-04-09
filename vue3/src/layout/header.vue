@@ -1,5 +1,5 @@
 <template>
-    <div class="head">
+    <div class="header">
         <ul class="nav">
             <li v-for="(item,index) in nav" :key="index">
                 <a :href="item.url">
@@ -29,7 +29,7 @@ export default {
 </script>
 
 <style scoped>
-.head {
+.header {
     
 }
 </style>

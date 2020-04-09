@@ -11,18 +11,22 @@
                 <router-view />
             </div>
         </div>
-        <div>Footer</div>
+        <div class="footer">
+            <appFooter />
+        </div>
     </div>
 </template>
 
 <script>
 import appHeader from "./header";
+import appFooter from "./footer";
 import appMenu from "./menu";
 export default {
     name: "appAdmin",
     components: {
         appHeader,
-        appMenu
+        appMenu,
+        appFooter
     }
 };
 </script>

@@ -7,9 +7,6 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '../theme/index.css';
 Vue.use(ElementUI);
 
-import axios from 'axios';
-Vue.prototype.$axios = axios;
-
 // 引入样式
 import '@/style.less';
 

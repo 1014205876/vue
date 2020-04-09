@@ -113,11 +113,11 @@
             return {
                 date: new Date(),
                 num: 3,
-                number: 10000,
+                number: 200,
                 form:{
                     number:'',
                 },
-                time: 2,
+                time: 0.5,
                 name: "公司名",
                 minQuota: "最小",
                 maxQuota: "最大",

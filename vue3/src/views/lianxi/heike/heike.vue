@@ -27,8 +27,8 @@ export default {
             wrap: null,
             self: null,
             ctx: null,
-            width: 1000,
-            height: 400
+            width: 600,
+            height: 300
         },
         letterList: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
         word: "黑客帝国文字下落特效",

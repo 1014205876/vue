@@ -1,0 +1,40 @@
+.admin {
+    display: grid;
+    grid-template-columns: 200px auto;
+    grid-template-rows: 50px auto auto;
+    grid-template-areas:
+        "logo head"
+        "menu main"
+        "foot foot";
+
+    .logo {
+        grid-area: logo;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        background: red;
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    .head {
+        grid-area: head;
+    }
+
+    .menu {
+        width: 200px;
+        grid-area: menu;
+    }
+
+    .main {
+        padding:24px;
+        grid-area: main;
+    }
+
+    .foot {
+        grid-area: foot;
+    }
+}

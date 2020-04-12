@@ -1,8 +1,9 @@
 module.exports = {
     // 基本路径
-    baseUrl: '/',
+    publicPath: '/',
     outputDir: '../server/dist',
     devServer: {
+        open:true,
         proxy: {
             '/api': {
                 target: 'http://localhost:3200',
@@ -10,6 +11,22 @@ module.exports = {
                 changeOrigin: true,   // 设置同源
                 pathRewrite: {
                     '^/api': '/api'
+                }
+            },
+            '/juhe': {
+                target: 'http://localhost:3200',
+                ws: true,//是否代理websockets
+                changeOrigin: true,   // 设置同源
+                pathRewrite: {
+                    '^/juhe': '/juhe'
+                }
+            },
+            '/apishop': {
+                target: 'http://localhost:3200',
+                ws: true,//是否代理websockets
+                changeOrigin: true,   // 设置同源
+                pathRewrite: {
+                    '^/apishop': '/apishop'
                 }
             },
             '/upload': {
@@ -36,6 +53,7 @@ module.exports = {
                     '^/ws': '/ws'
                 }
             },
-        }
+        },
+
     }
 }

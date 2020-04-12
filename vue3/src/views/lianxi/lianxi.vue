@@ -4,12 +4,9 @@
 
 <script>
 export default {
-    name: "App",
-    data: () => ({}),
-    created() {},
-    methods: {}
+    name: "appLianxi"
 };
 </script>
 
-<style>
+<style scoped lang="less">
 </style>

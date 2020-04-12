@@ -6,19 +6,23 @@ const server = axios.create({
 });
 
 // request拦截器
-server.interceptors.request.use(//发送时的拦截
+server.interceptors.request.use(
     (config) => {
+        console.log(config);
         return config;
     }, (error) => {
+        console.log(error); // for debug
         Promise.reject(error);
     }
 );
 
 // respone拦截器
-server.interceptors.response.use(//返回时的拦截
+server.interceptors.response.use(
     (response) => {
-        return response.data;
+        console.log(response);
+        return response;
     }, (error) => {
+        console.log(error); // for debug
         return Promise.reject(error);
     }
 );

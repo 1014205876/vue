@@ -1,0 +1,32 @@
+{
+  "name": "resource-server",
+  "description": "nodejs hello world app",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "nodemon start server.js"
+  },
+  "private": true,
+  "dependencies": {
+    "ali-oss": "^6.1.1",
+    "body-parser": "^1.19.0",
+    "co": "^4.6.0",
+    "compression": "^1.7.4",
+    "connect-cas2": "^1.2.5",
+    "cookie-parser": "^1.4.4",
+    "cos-nodejs-sdk-v5": "^2.4.16",
+    "express": "4.x",
+    "express-session": "^1.15.6",
+    "fx": "^0.0.1-security",
+    "http-proxy-middleware": "^0.19.1",
+    "jsonwebtoken": "^8.5.1",
+    "memory-cache": "^0.2.0",
+    "multer": "^1.4.1",
+    "nodemon": "^1.18.3",
+    "session-memory-store": "^0.2.2",
+    "stream": "0.0.2",
+    "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "superagent": "^4.1.0"
+  }
+}

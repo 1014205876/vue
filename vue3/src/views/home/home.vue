@@ -18,6 +18,8 @@
             <el-form-item>
                 <el-button type="primary" @click="search(1)">查询</el-button>
                 <el-button type="default" @click="reset()">重置</el-button>
+                <appRippleButton round plain class="btn">123</appRippleButton>
+                <appRippleButton>123</appRippleButton>
             </el-form-item>
         </el-form>
         <template v-if="type=='1'">

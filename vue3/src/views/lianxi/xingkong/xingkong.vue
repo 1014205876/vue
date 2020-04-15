@@ -1,11 +1,19 @@
 <template>
     <div class="xingkong">
-        <el-input-number v-model="starsNum" label="星星个数"></el-input-number>
-        <el-input-number v-model="canvas.width" label="画布宽"></el-input-number>
-        <el-input-number v-model="canvas.height" label="画布高"></el-input-number>
-
-        <el-button type="primary" @click="getStars()">重新生成</el-button>
-
+        <el-form :inline="true">
+            <el-form-item label="画布宽">
+                <el-input-number v-model="canvas.width" label="画布宽"></el-input-number>
+            </el-form-item>
+            <el-form-item label="画布高">
+                <el-input-number v-model="canvas.height" label="画布高"></el-input-number>
+            </el-form-item>
+            <el-form-item label="星星个数">
+                <el-input-number v-model="starsNum" label="星星个数"></el-input-number>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="getStars()">重新生成</el-button>
+            </el-form-item>
+        </el-form>
         <div class="sky">
             <ul class="stars">
                 <li v-for="(item,index) in starsList" :key="'1-'+index" :style="item.rotateZ">

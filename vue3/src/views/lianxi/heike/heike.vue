@@ -3,12 +3,20 @@
         <div class="canvas" :style="{width:canvas.width+'px',height:canvas.height+'px'}">
             <canvas id="canvas" ref="canvas" :width="canvas.width" :height="canvas.height"></canvas>
         </div>
-        <!-- <div :style="{'font-size':fontSize+'px'}">{{word}}</div> -->
-        <el-input-number v-model="canvas.width" label="画布宽"></el-input-number>
-        <el-input-number v-model="canvas.height" label="画布高"></el-input-number>
-
-        <el-input v-model="word" placeholder="请输入内容"></el-input>
-        <el-button type="primary" @click="canvasInit()">重新生成</el-button>
+        <el-form :inline="true">
+            <el-form-item label="画布宽">
+                <el-input-number v-model="canvas.width" label="画布宽"></el-input-number>
+            </el-form-item>
+            <el-form-item label="画布高">
+                <el-input-number v-model="canvas.height" label="画布高"></el-input-number>
+            </el-form-item>
+            <el-form-item label="画布内容">
+                <el-input v-model="word" placeholder="画布内容"></el-input>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="canvasInit()">重新生成</el-button>
+            </el-form-item>
+        </el-form>
     </div>
 </template>
 

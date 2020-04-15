@@ -1,18 +1,19 @@
 <template>
     <div class="saolei">
-        <p>
-            行数：
-            <el-input-number v-model="trNum" label="请选择行数"></el-input-number>
-        </p>
-        <p>
-            列数：
-            <el-input-number v-model="tdNum" label="请选择列数"></el-input-number>
-        </p>
-        <p>
-            雷数：
-            <el-input-number v-model="leiNum" label="请选择雷数"></el-input-number>
-        </p>
-        <el-button type="primary" @click="getLeiArr()">生成游戏</el-button>
+        <el-form :inline="true">
+            <el-form-item label="宽度：">
+                <el-input-number v-model="trNum" label="请选择行数"></el-input-number>
+            </el-form-item>
+            <el-form-item label="高度：">
+                <el-input-number v-model="tdNum" label="请选择列数"></el-input-number>
+            </el-form-item>
+            <el-form-item label="雷数：">
+                <el-input-number v-model="leiNum" :min="1" :max="trNum*tdNum"  label="请选择雷数"></el-input-number>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="getLeiArr()">生成游戏</el-button>
+            </el-form-item>
+        </el-form>
         <ul class="lei">
             <li v-for="(list,trIndex) in leiArr" :key="'1-'+trIndex">
                 <div class="box" v-for="(item,tdIndex) in list" :key="'2-'+tdIndex">
@@ -41,16 +42,15 @@
 export default {
     name: "appSaolei",
     data: () => ({
-        trNum: 20,
+        trNum: 15,
         tdNum: 30,
         leiNum: 10,
         leiArr: []
     }),
     created() {
         this.getLeiArr();
-        },
-    mounted() {
     },
+    mounted() {},
     methods: {
         getLeiArr() {
             //生成雷的数组
@@ -80,7 +80,7 @@ export default {
             item.open = true;
             if (item.has) {
                 this.$pop.createMessage(this, {
-                    type:'error',
+                    type: "error",
                     message: "扫雷失败"
                 });
                 return;
@@ -95,7 +95,7 @@ export default {
             });
             if (closeNum <= this.leiNum) {
                 this.$pop.createMessage(this, {
-                    type:'success',
+                    type: "success",
                     message: "扫雷成功"
                 });
                 return;

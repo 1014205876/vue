@@ -13,6 +13,9 @@ import '@/style.less';
 Vue.config.productionTip = false
 
 // 引入全局（组件/管道/服务）
+// 引入组件
+import grobalComponent from '@/grobal-component/index.js';
+Vue.use(grobalComponent);
 // 引入路由
 import router from '@/service/router';
 // 引入全局变量

@@ -1,0 +1,55 @@
+.btn {
+    display: inline-block;
+    cursor: pointer;
+    width: 80px;
+    height: 40px;
+    border-radius: 4px;
+    color: #fff;
+    background: #409EFF;
+    border: 1px solid #409EFF;
+    overflow: hidden;
+    position: relative;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &.round {
+        border-radius: 20px;
+    }
+
+    &.plain {
+        background: rgba(64, 158, 255, 0.4);
+        color: rgb(64, 158, 255);
+        border-color: rgb(64, 158, 255);
+    }
+
+    .ripple_animation {
+        pointer-events: none;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: #fff;
+        // animation:ripple 5s infinite;
+        // -webkit-animation: ripple 5s infinite;
+        animation-name: ripple;
+        animation-duration: 2s;
+        animation-timing-function: ease-in;
+        animation-delay: 0;
+        animation-iteration-count: 1;
+    }
+
+    @-webkit-keyframes ripple {
+        from {
+            width: 0px;
+            height: 0px;
+            opacity: 0.5;
+        }
+
+        to {
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+        }
+    }
+}

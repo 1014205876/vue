@@ -12,7 +12,7 @@
   "dependencies": {
     "echarts": "^4.2.0-rc.1",
     "element-ui": "^2.4.8",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "lib-flexible": "^0.3.2",
     "px2rem-loader": "^0.1.9",
     "swiper": "^4.4.1",

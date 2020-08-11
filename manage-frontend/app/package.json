@@ -19,7 +19,7 @@
     "js-cookie": "^2.2.0",
     "normalize.css": "^8.0.0",
     "nprogress": "^0.2.0",
-    "tinymce": "^5.1.4",
+    "tinymce": "^5.4.0",
     "v-charts": "^1.19.0",
     "v-distpicker": "^1.0.20",
     "vue": "^2.5.2",
